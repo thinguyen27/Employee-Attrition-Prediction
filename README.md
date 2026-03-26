@@ -29,4 +29,45 @@ Việc mô hình học máy thiên vị lớp đa số (người ở lại) là 
 Triển khai song song 4 thuật toán để đối chiếu hiệu năng:
 * Logistic Regression
 * Random Forest Classifier (Tối ưu hóa siêu tham số với GridSearchCV)
-* Support Vector Machine
+* Support Vector Machine (SVM)
+* Neural Network (MLPClassifier)
+
+**Tiêu chí đánh giá:** Trọng tâm được đặt vào **Recall** (Độ phủ rủi ro) và **F1-Score** cho lớp thiểu số (Nghỉ việc), thay vì Accuracy tổng thể, nhằm tối thiểu hóa rủi ro "bỏ lọt" nhân sự sắp nghỉ.
+
+---
+
+## 📈 Kết quả nổi bật
+
+* **Mô hình triển khai chính (Dự báo):** **Logistic Regression** đạt hiệu năng tối ưu nhất trên tập kiểm thử với F1-Score: 0.460 và Recall: 0.426 (tăng gấp 4 lần so với khi chưa dùng SMOTENC). 
+* **Mô hình phân tích nguyên nhân:** Giữ lại **Random Forest** để trích xuất `Feature Importance`.
+* **Insights kinh doanh:** * Quyền lợi tài chính dài hạn (StockOptionLevel) là yếu tố giữ chân nhân sự mạnh nhất.
+  * Sự hài lòng về môi trường/công việc và xung đột với quản lý trực tiếp đóng vai trò then chốt.
+  * Nhân sự thường xuyên phải làm thêm giờ (OverTime) có tỷ lệ nghỉ việc cao bất thường.
+
+---
+
+## 🚀 Đóng gói và Triển khai (Deployment)
+Dự án được thiết kế dưới dạng một luồng phân tích hoàn chỉnh (Pipeline), sẵn sàng tích hợp vào hệ thống doanh nghiệp:
+1. Xuất tập dữ liệu sau xử lý (`HR_Attrition_Advanced_for_PowerBI.csv`) cung cấp Data Source sạch cho đội ngũ BI xây dựng Dashboard.
+2. Lưu trữ toàn bộ mô hình (`.pkl` files) và bộ chuẩn hóa (`StandardScaler`) để đội ngũ IT có thể nhúng trực tiếp API vào hệ thống Quản trị Nhân sự (HRIS).
+
+---
+
+## 💻 Tech Stack
+* **Ngôn ngữ:** Python
+* **Thư viện thao tác dữ liệu:** Pandas, NumPy
+* **Trực quan hóa:** Matplotlib, Seaborn
+* **Học máy (Machine Learning):** Scikit-learn (Logistic Regression, Random Forest, SVM, MLP, GridSearchCV)
+* **Xử lý dữ liệu mất cân bằng:** Imbalanced-learn (SMOTENC)
+
+---
+
+## 👨‍💻 Thông tin tác giả
+**Quốc Thi** *Sinh viên năm 3, chuyên ngành Hệ thống Thông tin* *University of Technology and Engineering (GPA: 3.26)* Dự án được xây dựng với tư duy kết hợp chặt chẽ giữa khả năng lập trình mô hình học máy và tư duy phân tích nghiệp vụ, định hướng ứng dụng thực tiễn trong mảng Data Analytics.
+"""
+
+# Tạo và ghi file README.md
+with open("README.md", "w", encoding="utf-8") as file:
+    file.write(readme_content)
+
+print("✅ Đã tạo thành công file README.md trong thư mục hiện tại!")
