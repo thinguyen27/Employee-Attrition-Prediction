@@ -1,4 +1,3 @@
-readme_content = """# 🏢 Dự đoán rủi ro nghỉ việc của nhân sự (IBM HR Analytics: Employee Attrition Prediction)
 
 ## 📖 Tổng quan dự án
 Tình trạng nhân viên nghỉ việc (Attrition) không chỉ gây gián đoạn vận hành mà còn tiêu tốn nguồn lực khổng lồ cho việc tuyển dụng và đào tạo lại. Dự án này ứng dụng các kỹ thuật Phân tích dữ liệu (EDA) và Học máy (Machine Learning) để giải quyết bài toán nhân sự với hai mục tiêu cốt lõi:
